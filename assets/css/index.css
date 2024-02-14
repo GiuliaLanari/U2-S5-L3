@@ -44,6 +44,8 @@ h1 {
 
 .section1 {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .card {
@@ -56,10 +58,11 @@ h1 {
   flex-direction: column;
   align-items: center;
   background-color: #fbf7e3;
+  margin-block-end: 2rem;
 }
 
 .card img {
-  max-width: 25rem;
+  max-width: 20rem;
 }
 
 .text-card {
@@ -95,15 +98,83 @@ p {
   color: #612406;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-shop {
+    order: -1;
+  }
+  button {
+    margin-block-end: 1rem;
+  }
+  .btn-menu {
+    width: 10rem;
+    margin-inline-end: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  header {
+    border-radius: 0px;
+  }
+  button {
+    padding-inline: 0.5rem;
+  }
+  main {
+    padding-inline: 1rem;
+    margin-inline: 1rem;
+  }
+  .section2 {
+    padding-inline: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+  header {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .btn-shop {
+    order: -1;
+    margin-top: 2rem;
+    width: 15rem;
+    padding: 1rem;
+  }
+  button {
+    font-size: 1.5rem;
+    margin-block-end: 2rem;
+  }
+  .btn-menu {
+    padding: 2rem;
+    width: 15rem;
+  }
+  .text-card p {
+    font-size: 18px;
+  }
   .section2 {
     flex-direction: row-reverse;
-    align-items: start;
+    align-items: stretch;
   }
   .section2 div {
     padding-inline-start: 2rem;
   }
   .section2 img {
     margin: 0.5rem;
+    width: 50%;
+    flex-shrink: 10;
+    object-fit: cover;
   }
 }
